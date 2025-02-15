@@ -1,0 +1,14 @@
+CC = g++
+CFLAGS = -c -Wall
+
+YourProgram: AbstractFactoryPatternClass.o ProductFamilies.o
+    $(CC) AbstractFactoryPatternClass.o ProductFamilies.o -o YourProgram
+
+AbstractFactoryPatternClass.o: AbstractFactoryPatternClass.cpp
+    $(CC) $(CFLAGS) AbstractFactoryPatternClass.cpp
+
+ProductFamilies.o: ProductFamilies.cpp
+    $(CC) $(CFLAGS) ProductFamilies.cpp
+
+clean:
+    rm -f *.o YourProgram
