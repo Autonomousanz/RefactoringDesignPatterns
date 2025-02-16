@@ -151,7 +151,7 @@ must also implement it.
 **Open/Closed principal** - Keep existing code from breaking when you implement new features, A class is open if you can extend it, produce a subclass ,add new methods or fields,
 override base behavior.You can introduce new variants of products without breaking existing client codeA class is open for features but closed for modifications.If a class is already developed, tested, reviewed, and included in some framework or otherwise used in an app, trying to mess with its code is risky. Instead of changing the code of the class directly, you can create a subclass and override parts of the original class that you want to behave differently. example strategy design pattern: **STRATEGY Design Pattern**
 
-<img src="media/image-9.png" alt="Alt Text" width="300" height="200"> <img src="media/image-10.png" alt="Alt Text" width="300" height="200">
+<img src="media/image-10.png" alt="Alt Text" width="300" height="200">
 
 **Liskov Substitution Principal** - subclass should remain compatible with the behavior of the superclass, use overriding with similar behaviors.The substitution principle is a set of checks that help predict
 whether a subclass remains compatible with the code that was able to work with objects of the superclass. This concept is critical when developing libraries and frameworks because your classes are going to be used by other people whose code
