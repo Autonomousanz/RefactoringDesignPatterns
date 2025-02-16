@@ -3,18 +3,22 @@ which increase flexibility and reuse of existing code.
 
 1. Factory Method - Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.The Factory Method pattern suggests that you replace direct object construction calls (using the new operator) with calls to a special factory method.There’s a slight limitation though: subclasses may return different types of products only if these products have a common base class or interface.The client treats all the products as abstract Transport.You can declare the factory method as abstract to force all subclasses to implement their own versions of the method.
 
-![alt text](Creational/media/image.png)
+<img src="Creational/media/image.png" alt="Alt Text" width="300" height="200">
 
-![alt text](Creational/media/image-6.png)![alt text](Creational/media/image-11.png)
+<img src="Creational/media/image-6.png" alt="Alt Text" width="300" height="200">
+
+<img src="Creational/media/image-11.png" alt="Alt Text" width="300" height="200">
+
+
 The factory method in the RoadLogistics class returns truck objects, whereas the factory method in the SeaLogistics class returns ships.
 
 2. Abstract Factory Pattern - Abstract Factory—an interface with a list of creation methods for all products that are part of the product family. (for example, createChair , createSofa and createCoffeeTable ). These methods must return abstract product types represented by the interfaces we extracted previously: Chair , Sofa , CoffeeTable. The client code has to work with both factories and products via their respective abstract interfaces. The Client can work with any concrete factory/product variant, as long as it communicates with their objects via abstract interfaces (VictorianFurnitureFactory and ModernFurnitureFactory)
 
 Use the Abstract Factory when your code needs to work with various families of related products, but you don’t want it to depend on the concrete classes of those products—they might be unknown beforehand or you simply want to allow for future extensibility.Consider implementing the Abstract Factory when you have a class with a set of Factory Methods that blur its primary responsibility.In a well-designed program each class is responsible only for one thing. When a class deals with multiple product types, it may be worth extracting its factory methods into a standalone factory class or a full-blown Abstract Factory implementation.
 
-![alt text](Creational/media/image-1.png)
-![alt text](Creational/media/image-10.png)
-![alt text](Creational/media/image-12.png)
+<img src="Creational/media/image-1.png" alt="Alt Text" width="300" height="200">
+<img src="Creational/media/image-10.png" alt="Alt Text" width="300" height="200">
+<img src="Creational/media/image-12.png" alt="Alt Text" width="300" height="200">
 
 a. Map out a matrix of distinct product types versus variants of these products.
 b. Declare **abstract product interfaces** for all product types. Then make all concrete product classes implement these interfaces.

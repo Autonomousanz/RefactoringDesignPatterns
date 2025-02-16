@@ -183,7 +183,9 @@ people design low-level classes first and only then start working on high-level 
 1. Describe interfaces for low-level operations that high-level classes rely on, preferably in business terms.
 2. Make high-level classes dependent on those interfaces, instead of on concrete low-level classes.
 3. Once low-level classes implement these interfaces, they become dependent on the business logic level, reversing the direction of the original dependency.
-<img src="media/image-13.png" alt="Alt Text" width="300" height="300"> <img src="media/image-14.png" alt="Alt Text" width="300" height="300"> 
+
+<img src="media/image-13.png" alt="Alt Text" width="300" height="300"> 
+<img src="media/image-14.png" alt="Alt Text" width="300" height="300"> 
 
 ## General notes
 
