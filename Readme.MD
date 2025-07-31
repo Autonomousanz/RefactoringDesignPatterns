@@ -114,14 +114,15 @@ must also implement it.
 |  5.   |Abstract Factory | Abstract factory method produces families of related objects without providing concrete classes |Abstract Factory pattern can be used for creating cross-platform UI elements without coupling the client code to concrete UI classes, while keeping all created elements consistent with a selected operating system. | It explicitly declare interfaces for each distinct product of the product family eg chair, sofa or coffee table and then all variants of products follow individual product interfaces. Then declare the Abstract Factory—an interface with a list of creation methods for all products that are part of the product family eg createChair, createCoffeetable. These methods must return abstract product types represented by the interfaces.We create a separate factory class based on the AbstractFactory interface.
 
 
-| Sr.No | Structural       |     |   |
-|:----- | :-------------- |:-------------:| -----------:|
-|  1.   |         |               |             |
-|  2.   |      |               |             |
-|  3.   |        |               |       
-|  4.   |         |               |         |
-|  5.   | |               |        |
-|  6.   |      |               |         |
+| Sr.No | Structural      | Description| Examples | ways of Implementation
+|:----- | :-------------- |:-------------|:-----------|:------------------------|
+|  1.   | Adapter         |This pattern provides a unified interface that allows objects with incompatible interfaces to collaborate. |you can wrap an object that operates in meters and kilometers with an adapter that converts all of the data to imperial units such as feet and miles.|Use the Adapter class when you want to use some existing class, but its interface isn’t compatible with the rest of your code. To extend functionality of each subclass add it into adapter class  |
+|  2.   | Bridge          |This pattern lets you split large class or set of closely related classes into 2 separate hierarchy - abstraction and implementation which are independent of each other.|             |
+|  3.   | Composite       |This pattern lets you compose objects into tree structure and then work with these structures and work with these structures as if they were individual objects.       |       
+|  4.   | Decorator       |This pattern lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain behaviors. |         |
+|  5.   | Facade          |This pattern provides a simplified interface to a library , framework or any other complex set of classes. |        |
+|  6.   | Flyweight       | This pattern lets you fit more objects into the available amount of RAM by sharing common parts of the state between multiple objects instead of keeping all of the data in each object. |         |
+|  7.   | Proxy           | This pattern lets you provide a substitute or a placeholder for another object. A proxy controls access to the original object allowing you to perform something either before or after the request gets through to the orginal object. | 
 
 | Sr.No | Behavioral      |     |   |
 |:----- | :-------------- |:-------------:| -----------:|

@@ -27,7 +27,7 @@
 // Concrete product classes
     class VictorianChair : public Chair{
         public:
-        void haslegs() override;
+        void haslegs() override; //declaration
         bool sitOn() override {return true;};
         ~VictorianChair()= default;
     };
@@ -59,7 +59,7 @@
     class ModernCoffeetable: public CoffeeTable{
         public:
         void haslegs() override;
-        bool sitOn() override {return false;};
+        bool sitOn() override {return false;};// definition
         ~ModernCoffeetable()= default;
     };
 

@@ -30,7 +30,8 @@ class Builder{
     virtual void* getResult() = 0;  // Returns void* which concrete builders will override
 
 };
-//The concrete builder classes follow the builder interface and provide specific implementations of the building steps program may have several variations of builders, each implemented differently.
+//The concrete builder classes follow the builder interface and provide specific implementations of the building steps
+// program may have several variations of builders, each implemented differently.
 // Concrete builders are supposed to provide their own methods for retrieving results. 
 //after returning the end result to the client, builder instance is expected to be ready to start producing another product.
 class CarBuilder: public Builder{
