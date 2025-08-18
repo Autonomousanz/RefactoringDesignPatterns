@@ -13,3 +13,13 @@ Aggregation is mild composition - a car has a driver, but he or she may use anot
 There’s a lot of duplicate code between subclasses because a subclass can’t extend two classes at the same time.You can solve this problem with composition. One can replace an engine object linked to a car object just by assigning a different engine object to the car.
 
 ![alt text](image-1.png)
+
+### Multilevel Inheritance
+Pure Virtual Functions:
+.
+These are declared with = 0 in the base class (e.g., virtual void func() = 0;). Any concrete (non-abstract) class inheriting from a class with pure virtual functions must provide an implementation for them.
+Regular Virtual Functions:
+.
+These have a default implementation in the base class. Derived classes can override them to provide specific behavior, but they are not required to do so. If a derived class does not override a regular virtual function, it will inherit the base class's implementation.
+
+In multilevel inheritance, a derived class is only obligated to implement pure virtual functions from its parent classes (or any ancestor class). If a class inherits a pure virtual function and does not provide an implementation for it, that class itself becomes an abstract class and cannot be instantiated.
