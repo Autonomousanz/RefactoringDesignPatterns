@@ -90,7 +90,8 @@ public:
 class ShapeFactory {
 private:
     // Registry of constructor functions
-    std::map<std::string, std::function<std::unique_ptr<Shape>()>> constructors; // "circle" : object of circle
+    std::map<std::string, std::function<std::unique_ptr<Shape>()>> constructors; // "circle" : object of circle Runtime Type Resolution:
+    // The client code doesn't need to know about specific classes - it just needs to know the string identifier
     // Purpose: Encapsulates object creation logic and provides a way to create objects without specifying their exact classes
 public:
     // Register a constructor function for a shape type
