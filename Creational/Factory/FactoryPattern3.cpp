@@ -50,7 +50,7 @@ class Logistics{
             delete t;
         }
     private:
-        std::unordered_map<std::string, Transport*> TransportPool;
+        std::unordered_map<std::string, Transport*> TransportPool;//caching 
 
     protected:
     Transport* getOrCreateTransport(const std::string& key) {

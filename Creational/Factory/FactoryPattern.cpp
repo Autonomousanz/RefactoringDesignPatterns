@@ -1,5 +1,4 @@
-/* Factory design pattern is a creational design pattern that provides an INTERFACE for creating objects in a superclass but allows subclasses
- to alter the type of the objects that will be created switch objects behavior based on classes being called . The structure is as follows : -
+/* . The structure is as follows : -
 
 1. Product - declares the interface , common to all objects that can be produced by creater class or its subclasses (Transport interface )
 2. Creater class - declares factory method that returns new product objects, return type must match PRODUCT interface.  (logistics app)
@@ -17,7 +16,7 @@ using namespace std;
 //The Transport class serves as the abstract product interface, declaring the deliver() method that all concrete products must implement
 class Transport {
     public:
-     virtual void deliver() = 0;
+     virtual void deliver() = 0; // pure virtual function
      //Using = default instead of an empty body ({}) can be more efficient, as it allows the compiler to generate the most appropriate implementation
      virtual ~Transport() = default; //virtual keyword makes the destructor virtual, allowing proper cleanup of derived classes when deleting through a base class pointer 
 };
@@ -38,13 +37,14 @@ class Ship : public Transport{
 
 };
 
-// Step 3 Create Creator class
-//The Logistics class is the abstract creator class, declaring the factory method createTransport() and providing a planDelivery() method that uses the factory method
+// Step 3 Create Abstract Creator class
+//The Logistics class is the abstract creator class, declaring the factory method createTransport() and
+// providing a planDelivery() method that uses the factory method
 class Logistics{
     public:
         virtual Transport* createTransport() = 0;
         void planDelivery(){
-            Transport* t = createTransport();
+            Transport* t = createTransport(); // create instance of specific product interface.
             t->deliver();
             delete t;
         }
@@ -56,13 +56,13 @@ class Logistics{
 // RoadLogistics and ShipLogistics are concrete creator classes that override the createTransport() method to return specific product instances.
 class RoadLogistics : public Logistics{
     Transport* createTransport() override{
-        return new Truck();
+        return new Truck(); // return specific product instances
     }
 };
 
 class ShipLogistics : public Logistics{
     Transport* createTransport()override{
-        return new Ship();
+        return new Ship(); // return specific product instances
     }
 };
 
@@ -77,7 +77,7 @@ int main(){
     
     std::cout << "Choosing delivery method Sea:" << std::endl;
 
-    roadLogisticsObj->planDelivery();
+    shipLogisticsObj->planDelivery();
     
     delete roadLogisticsObj;
     delete shipLogisticsObj; 

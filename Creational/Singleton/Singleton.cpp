@@ -1,6 +1,7 @@
 #include<memory>
 #include<iostream>
 #include<string>
+//The Singleton pattern is a type of design pattern that restricts the instantiation of a class to a single object
 // The Database class defines the `getInstance` method that lets clients access the same instance of a database connection throughout the program.
 class Database{
     // The field for storing the singleton instance should be declared static
@@ -29,6 +30,7 @@ class Database{
         }
         ~Database(){
             std::cout << "close database connection" << std::endl;
+            delete instance;
         }
 
 };
@@ -40,6 +42,8 @@ int main() {
     db->query("SELECT * FROM users");
     Database* bar = Database::getInstance();
     bar->query("SELECT ...");
+    Database* newDb = Database::getInstance();
+    newDb->query("SELECT NEWDB...");
     std::cout <<  "The constructor was called once hence same object is used twice."<< std::endl;
     return 0;
 }

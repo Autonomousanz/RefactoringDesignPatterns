@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 using namespace std;
-
+// Product Interface
 class Button{
     public:
       virtual void render() = 0;
@@ -11,7 +11,7 @@ class Button{
     virtual ~Button() = default;
 };
 
-
+//Concrete products
 class WindowsButton : public Button{
     public:
         void render() override{
@@ -50,6 +50,7 @@ class Dialog{
     virtual Button* createButton() = 0;
     std::string CloseDialog = "Windows";
     virtual ~Dialog() = default;
+    // provide common functionality
     void renderButton(){
         Button* okButton = createButton();
         okButton->OnClick(CloseDialog);
@@ -57,6 +58,7 @@ class Dialog{
         delete okButton;
     }
 };
+// Concrete creator classes
 class WindowDialog : public Dialog{
     public:
         Button* createButton() override{
@@ -83,7 +85,7 @@ int main(){
     Dialog* dialogObj1 = new WindowDialog();
     Dialog* dialogObject = new HTMLDialog();
     Dialog* roundButtonObj = new RoundUIDialog();
-    dialogObject->CloseDialog = "Ubuntu";
+    dialogObject->CloseDialog = "HTML";
     dialogObj1->renderButton();
     dialogObject->renderButton();
 
