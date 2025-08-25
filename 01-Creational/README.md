@@ -1,5 +1,5 @@
-Creational patterns provide various object creation mechanisms,
-which increase flexibility and reuse of existing code.
+### Creational patterns 
+They provide various object creation mechanisms, which increase flexibility and reuse of existing code.
 
 1. Factory Method - Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.The Factory Method pattern suggests that you replace direct object construction calls (using the new operator) with calls to a special factory method.There’s a slight limitation though: subclasses may return different types of products only if these products have a common base class or interface.The client treats all the products as abstract Transport.You can declare the factory method as abstract to force all subclasses to implement their own versions of the method.
 
@@ -44,3 +44,38 @@ The reason for this is to control access to some shared resource—for example, 
 Make the default constructor private, to prevent other objects from using the new operator with the Singleton class. The Singleton class declares the static method getInstance that returns the same instance of its own class.
 
 <img src="media/image-4.png" alt="Alt Text" width="300" height="200">
+
+## Notes
+
+1. Factory Method Pattern
+
+Creates one type of object
+Has one factory method that returns a single product
+Used when you need to create objects of one product hierarchy
+Simpler structure with fewer classes
+Factory → Product
+
+2. Abstract Factory Pattern
+
+Creates families of related objects
+Has multiple factory methods that return different but related products
+Used when you need to create objects from multiple product hierarchies that work together
+More complex structure with more classes
+Factory → Product A + Product B + Product C (related family)
+
+![alt text](image.png)
+
+Real-world Examples:
+Factory Method:
+
+Database connection factory (MySQL, PostgreSQL, SQLite)
+Logger factory (File, Console, Network)
+Payment processor factory (PayPal, Stripe, Square)
+
+Abstract Factory:
+
+GUI toolkit (Windows/Mac/Linux themes with buttons, windows, menus)
+Game engine (Medieval/SciFi themes with weapons, armor, vehicles)
+Document formats (PDF/Word/HTML with headers, paragraphs, images)
+
+The key insight: Factory Method creates objects, Abstract Factory creates families of objects that work together.

@@ -33,3 +33,14 @@ public:
     }
 };
 ```
+## Functor (function object)
+
+```
+ std::unique_ptr<Circle> operator()() {
+        return std::make_unique<Circle>(defaultRadius);
+    }
+```
+Stateful: Can remember values between calls
+Configurable: Each object can have different settings
+Flexible: Can have multiple operator() overloads
+Compatible: Works with std::function, algorithms, etc.

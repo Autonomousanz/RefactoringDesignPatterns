@@ -1,3 +1,11 @@
+## Abstract Factory Pattern
+
+Abstract Products: Button and Checkbox interfaces
+Concrete Products: Windows and Mac implementations of each UI component
+Abstract Factory: GUIFactory interface that creates related products
+Concrete Factories: WindowsFactory and MacFactory that create platform-specific components
+Client: Application class that uses the factory without knowing concrete types
+
 A pure virtual function (or abstract function) in C++ is a virtual function for which we can have an implementation, But we must override that function in the derived class, otherwise, the derived class will also become an abstract class. A pure virtual function is declared by assigning 0 in the declaration. 
 ```
 // An abstract class

@@ -36,7 +36,7 @@ class Builder{
 //after returning the end result to the client, builder instance is expected to be ready to start producing another product.
 class CarBuilder: public Builder{
     private:
-       Car* car;
+       Car* car;// OR std::unique_ptr<Car> car;
     public:
         void reset() override{
             this->car = new Car();
@@ -109,7 +109,8 @@ class ManualBuilder: public Builder{
         }
 
 };
-//The director is only responsible for executing the building steps in a particular sequence. It's helpful when producing  products according to a specific order or configuration.
+//The director is only responsible for executing the building steps in a particular sequence.
+// It's helpful when producing  products according to a specific order or configuration.
 // The director class is optional, since the  client can control builders directly
 class Director{
     private:

@@ -1,12 +1,17 @@
 ## Main Prototype Pattern requirements
+Abstract Prototype (Shape): Defines the clone() interface that all concrete prototypes must implement
+Concrete Prototypes (Circle, Rectangle, Triangle): Each implements the clone() method to create copies of themselves.The pattern is particularly useful when you have objects with many possible configurations and want to avoid the combinatorial explosion of subclasses or complex factory methods.
+Copy constructor is called: make_unique<Resume>(*this) uses the copy constructor
+New object created: A completely new Resume object with the same data
+Independent object: Changes to the clone don't affect the original prototype
 
 1. Copy constructor -  A constructor that initializes an object using another object of the same class
 ```
-class MyClass {
+class MyClass : Parent{
 public:
     int value;
     MyClass(int v) : value(v) {}
-    MyClass(const MyClass& other) : value(other.value) {}
+    MyClass(const MyClass& other) : Parent(other), value(other.value) {}
 };
 
 int main() {

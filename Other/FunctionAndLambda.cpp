@@ -13,12 +13,13 @@ public:
 std::unique_ptr<Circle> createDefaultCircle() {
     return std::make_unique<Circle>(1.0); //default circle
 }
-
+/*A function object or functor is a class/struct that can be "called" like a function by overloading the operator(). 
+It's like making a custom object that behaves like a function but can store data.*/
 // Function object (functor)
 struct CircleCreator {
     double defaultRadius;
     CircleCreator(double r) : defaultRadius(r) {}
-    
+    //"function object"
     std::unique_ptr<Circle> operator()() {
         return std::make_unique<Circle>(defaultRadius);
     }
