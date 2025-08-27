@@ -28,7 +28,10 @@ class TreeType{
 // Flyweight factory manages and shares flyweight class instances
 class TreeTypeFactory{
     private:
+        // declaration of static member variable
         static std::unordered_map<std::string, std::shared_ptr<TreeType>> treeTypes_; // name_color -> TreeType(shared_ptr , same object can be shared)
+      // inline static - no separate definition needed!
+    //inline static std::unordered_map<std::string, std::shared_ptr<TreeType>> treeTypes_;
     public:
         static std::shared_ptr<TreeType> getTreeType(const std::string &name, const std::string &color){
             std::string key = name + " _ " + color;
@@ -51,8 +54,11 @@ class TreeTypeFactory{
         return treeTypes_.size();
     }
 };
-// Intialize treeType_
-std::unordered_map<std::string, std::shared_ptr<TreeType>> TreeTypeFactory::treeTypes_;
+// Intialize treeType_  defining (allocating memory for) a static member variable that was declared inside the TreeTypeFactory class.
+std::unordered_map<std::string, std::shared_ptr<TreeType>> TreeTypeFactory::treeTypes_; //Compatibility: Works with all C++ standards
+//// Outside class - definition with initial value
+// std::unordered_map<std::string, std::shared_ptr<TreeType>> 
+//     TreeTypeFactory::treeTypes_ = {}; // Initialize as empty
 // Context class - stores the extrinsic state (unique data per new object)
 class Tree{
     private:
