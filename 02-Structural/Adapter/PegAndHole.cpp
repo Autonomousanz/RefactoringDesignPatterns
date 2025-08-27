@@ -8,12 +8,14 @@ class RoundPeg{
        int radius;
     public:
         RoundPeg(int rad): radius(rad) {} // Fixed: initialize radius with rad
+        
         virtual int getRadius(){
             return radius; // Make this virtual for proper polymorphism
         }
         virtual ~RoundPeg(){} // Virtual destructor for proper cleanup
 
 };
+//Target Interface: The interface that the client expects
 class RoundHole {
     private:
         int r;
@@ -29,7 +31,7 @@ class RoundHole {
         }
 };
 //an incompatible class: SquarePeg 
-
+//Adaptee: The existing class with an incompatible interface
 class SquarePeg{
     private:
         int width;
@@ -41,7 +43,7 @@ class SquarePeg{
 
 };
 // An adapter class lets you fit square pegs into round holes. It extends the RoundPeg class to let the adapter objects act as round pegs.
-
+//Object Adapter: Uses composition (has-a relationship)
 class SquarePegAdapter : public RoundPeg{
     private:
     // contains the instance of incompatible class
