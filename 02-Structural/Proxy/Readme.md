@@ -26,3 +26,11 @@ Network requests to APIs
 Database queries
 File compression/decompression
 Complex calculations
+
+When to Use Proxy Pattern:
+
+Lazy initialization: When object creation is expensive
+Access control: When you need to restrict access to an object
+Caching: When you want to cache expensive operations
+Remote objects: When the real object is on a different machine
+Smart references: When you need to track object usage

@@ -6,6 +6,7 @@
 #include <chrono>
 #include <thread>
 //subject interface defines common operations
+//Defines the common interface that both Real Subject and Proxy implement
 class Image{
     public: 
         virtual ~Image() = default;
@@ -49,6 +50,7 @@ class RealImage : public Image{
 class ImageProxy : public Image {
 private:
     std::string filename_;
+    //mutable: Allows lazy loading in const methods (logical constness)
     mutable std::unique_ptr<RealImage> realImage_;  // mutable for lazy loading in const methods
     RealImage* getRealImage() const {
         if (!realImage_) {

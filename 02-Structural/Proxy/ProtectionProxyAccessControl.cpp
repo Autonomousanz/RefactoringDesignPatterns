@@ -6,7 +6,8 @@
 
 // Protection Proxy example - controls access based on permissions
 enum class UserRole { GUEST, USER, ADMIN };
-
+//subject interface defines common operations,
+// Defines the common interface that both Real Subject and Proxy implement
 class SecureDocument {
 public:
     virtual ~SecureDocument() = default;
@@ -14,7 +15,7 @@ public:
     virtual void write(const std::string& content) = 0;
     virtual void deleteDoc() = 0;
 };
-
+// real subject; the actual heavy object
 class RealDocument : public SecureDocument {
 private:
     std::string filename_;
@@ -42,7 +43,8 @@ public:
         content_.clear();
     }
 };
-
+// Virtual Proxy - controls access and permissions
+//Controls access to the Real Subject and can add additional behavior
 class DocumentProxy : public SecureDocument {
 private:
     std::unique_ptr<RealDocument> realDocument_;
